@@ -1,0 +1,72 @@
+@import '../../../theme/variables';
+
+.hero {
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    height: 30rem;
+    object-fit: cover;
+  }
+
+  &__content {
+    background-color: $pureBlack;
+    padding: 7.2rem 2.8rem;
+    position: relative;
+
+    &--trim::before {
+      background: $mainAccent;
+      content: '';
+      display: block;
+      height: 6px;
+      position: absolute;
+      top: 0;
+      width: 12.8rem;
+    }
+  }
+
+  &__featured {
+    color: $pureWhite;
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    line-height: 1.6rem;
+    margin-bottom: 1.6rem;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    @include largeHeading;
+    color: $pureWhite;
+    margin-bottom: 1.6rem;
+  }
+
+  &__credit {
+    color: $pureWhite;
+    display: flex;
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+    margin-bottom: 2.4rem;
+  }
+
+  &__date {
+    margin-right: 1rem;
+    opacity: .75;
+  }
+
+  &__author {
+    font-weight: 700;
+  }
+
+  &__intro {
+    @include body;
+    color: $pureWhite;
+    margin-bottom: 2.4rem;
+    opacity: .6;
+  }
+
+  &--alternate &__image {
+    height: 32rem;
+  }
+}
