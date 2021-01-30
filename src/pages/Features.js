@@ -1,12 +1,12 @@
 import React from 'react'
 // COMPONENTS
-import Nav from '../components/shared/Nav/Nav';
 import HeroImage from '../components/shared/HeroImage/HeroImage';
 import Icons from '../components/shared/Icons/Icons';
 import IconColumn from '../components/shared/Icons/IconColumn/IconColumn';
 
 // DATA
 import featuresData from './pageData/featuresData';
+import PageTemplate from './PageTemplate/PageTemplate';
 
 function Features() {
 
@@ -15,8 +15,7 @@ function Features() {
     icons
   } = featuresData
   return (
-    <>
-      <Nav />
+    <PageTemplate>
       <HeroImage
         {...hero}
       />
@@ -28,7 +27,7 @@ function Features() {
           />
         ))}
       </Icons>
-    </>
+    </PageTemplate>
   )
 }
 

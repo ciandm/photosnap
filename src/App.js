@@ -8,10 +8,12 @@ import ROUTES from './pages/routes';
 import Home from './pages/Home';
 import Stories from './pages/Stories';
 import Features from './pages/Features';
+import ScrollToTop from './utils/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Switch>
         <Route path={ROUTES.STORIES}>
           <Stories />

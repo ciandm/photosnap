@@ -1,6 +1,6 @@
 import React from 'react'
 // COMPONENTS
-import Nav from '../components/shared/Nav/Nav';
+import PageTemplate from './PageTemplate/PageTemplate';
 import HeroImage from '../components/shared/HeroImage/HeroImage';
 import PhotosnapProposition from '../components/home/PhotosnapProposition/PhotosnapProposition';
 import ReadStoryCard from '../components/shared/ReadStories/ReadStoryCard/ReadStoryCard';
@@ -11,6 +11,7 @@ import Icons from '../components/shared/Icons/Icons';
 import homeData from './pageData/homeData';
 import IconColumn from '../components/shared/Icons/IconColumn/IconColumn';
 
+
 function Home() {
 
   const {
@@ -20,8 +21,7 @@ function Home() {
     icons
   } = homeData
   return (
-    <>
-      <Nav />
+    <PageTemplate>
       <HeroImage
         {...hero}
       />
@@ -55,7 +55,7 @@ function Home() {
           />
         ))}
       </Icons>
-    </>
+    </PageTemplate>
   )
 }
 
