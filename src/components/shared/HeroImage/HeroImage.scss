@@ -4,24 +4,78 @@
   display: flex;
   flex-direction: column;
 
-  &__image {
+  @include for-phone-up {
+    align-items: stretch;
+    flex-direction: row;
+  }
+
+  &__image-container {
+    flex-shrink: 0;
     height: 30rem;
+    position: relative;
+
+    @include for-phone-up {
+      height: initial;
+      order: 1;
+      width: 27rem;
+    }
+
+    @include for-laptop-up {
+      flex: 1;
+    }
+  }
+
+  &__image {
+    bottom: 0;
+    height: 100%;
+    left: 0;
     object-fit: cover;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
   }
 
   &__content {
+    align-items: center;
     background-color: $pureBlack;
+    display: flex;
     padding: 7.2rem 2.8rem;
     position: relative;
 
-    &--trim::before {
-      background: $mainAccent;
-      content: '';
-      display: block;
-      height: 6px;
-      position: absolute;
+    @include for-phone-up {
+      padding: 17rem 5.4rem;
+    }
+
+    @include for-laptop-up {
+      max-width: 61rem;
+      padding: 17rem 11rem;
+    }
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__container::before {
+    background: $mainAccent;
+    content: '';
+    display: block;
+    height: 6px;
+    position: absolute;
+    // size of padding-top
+    top: -7.2rem;
+    width: 12.8rem;
+
+    @include for-phone-up {
+      height: 100%;
+      left: -5.4rem;
       top: 0;
-      width: 12.8rem;
+      width: 6px;
+    }
+
+    @include for-laptop-up {
+      left: -11rem;
     }
   }
 
@@ -62,11 +116,55 @@
   &__intro {
     @include body;
     color: $pureWhite;
-    margin-bottom: 2.4rem;
     opacity: .6;
+
+    & + button {
+      margin-top: 1.2rem;
+    }
   }
 
-  &--alternate &__image {
+  // Alternate hero section, with full width background image
+
+  &--alternate {
+    position: relative;
+
+    @include for-phone-up {
+      height: 65rem;
+      padding-left: 4rem;
+    }
+
+    @include for-laptop-up {
+      padding: 11rem;
+    }
+  }
+
+  &--alternate &__content {
+    @include for-phone-up {
+      background-color: transparent;
+      max-width: 55%;
+      padding: 0
+    }
+
+    @include for-laptop-up {
+      max-width: 40rem;
+    }
+  }
+
+  &--alternate &__image-container {
     height: 32rem;
+
+    @include for-phone-up {
+      bottom: 0;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  &--alternate &__container::before {
+    display: none;
   }
 }

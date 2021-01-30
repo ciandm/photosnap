@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom';
 import useWindowSize from '../../../utils/useWindowSize';
 // STYLES
 import './Nav.scss';
@@ -6,6 +7,7 @@ import './Nav.scss';
 import Button from '../Button/Button';
 // ASSETS
 import LOGO from '../../../assets/shared/desktop/logo.svg';
+import ROUTES from '../../../pages/routes';
 
 function Nav() {
 
@@ -15,12 +17,23 @@ function Nav() {
   return (
     <nav className={open ? 'nav nav--active' : 'nav'}>
       <div className="nav__wrapper">
-        <img src={LOGO} alt="" className="nav__logo" />
+        <NavLink
+          to={ROUTES.HOME} exact
+        >
+          <img src={LOGO} alt="" className="nav__logo" />
+        </NavLink>
         <div className="nav__links">
           <ul className="nav__list">
-            <li className="nav__item">Stories</li>
-            <li className="nav__item">Features</li>
-            <li className="nav__item">Pricing</li>
+            <li className="nav__item">
+              <NavLink
+                to={ROUTES.STORIES}
+              >Stories</NavLink></li>
+            <li className="nav__item"><NavLink
+              to={ROUTES.FEATURES}
+            >Features</NavLink></li>
+            <li className="nav__item"><NavLink
+              to={ROUTES.PRICING}
+            >Pricing</NavLink></li>
           </ul>
           <Button
             variation="black">

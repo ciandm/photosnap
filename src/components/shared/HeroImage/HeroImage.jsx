@@ -17,35 +17,43 @@ function HeroImage({
 }) {
   return (
     <section className={alternate ? 'hero hero--alternate' : 'hero'}>
-      <ResponsiveImage
-        classes="hero__image"
-        image={images}
-        alt="Man with a camera looking over a beautiful lake"
-      />
-      <div className="hero__content hero__content--trim">
-        {
-          featured ? (
-            <span className="hero__featured">
-              Last month's featured story
-            </span>
-          ) : null
-        }
-        <h1 className="hero__title">{title}</h1>
-        {
-          credit ? (
-            <div className="hero__credit">
-              <p className="hero__date">{credit.date}</p>
-              <span className="hero__author">{credit.author}</span>
-            </div>
-          ) : null
-        }
-        <p className="hero__intro">{intro}</p>
-        <Button
-          variation={button.variation}
-          link={button.link}
-        >
-          {button.text}
-        </Button>
+      <div className="hero__image-container">
+        <ResponsiveImage
+          classes="hero__image"
+          images={images}
+          alt="Man with a camera looking over a beautiful lake"
+        />
+      </div>
+      <div className="hero__content">
+        <div className="hero__container">
+          {
+            featured ? (
+              <span className="hero__featured">
+                Last month's featured story
+              </span>
+            ) : null
+          }
+          <h1 className="hero__title">{title}</h1>
+          {
+            credit ? (
+              <div className="hero__credit">
+                <p className="hero__date">{credit.date}</p>
+                <span className="hero__author">by {credit.photographer}</span>
+              </div>
+            ) : null
+          }
+          <p className="hero__intro">{intro}</p>
+          {
+            button ? (
+              <Button
+                variation={button.variation}
+                link={button.link}
+              >
+                {button.text}
+              </Button>
+            ) : null
+          }
+        </div>
       </div>
     </section>
   )
@@ -64,7 +72,7 @@ HeroImage.propTypes = {
   title: PropTypes.string.isRequired,
   credit: PropTypes.shape({
     date: PropTypes.string,
-    author: PropTypes.string.isRequired,
+    photographer: PropTypes.string.isRequired,
   }),
   intro: PropTypes.string.isRequired,
   button: PropTypes.shape({

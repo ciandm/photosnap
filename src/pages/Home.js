@@ -2,6 +2,7 @@ import React from 'react'
 // COMPONENTS
 import Nav from '../components/shared/Nav/Nav';
 import HeroImage from '../components/shared/HeroImage/HeroImage';
+import PhotosnapProposition from '../components/home/PhotosnapProposition/PhotosnapProposition';
 
 // DATA
 import homeData from './pageData/homeData';
@@ -9,18 +10,28 @@ import homeData from './pageData/homeData';
 function Home() {
 
   const {
-    hero
+    hero,
+    propositions
   } = homeData
   return (
     <>
       <Nav />
       <HeroImage
-        alternate={hero.alternate}
-        images={hero.images}
-        title={hero.title}
-        intro={hero.intro}
-        button={hero.button}
+        {...hero}
       />
+      {
+        propositions.map(p => (
+          <PhotosnapProposition
+            key={p.id}
+            images={p.images}
+            alt={p.alt}
+            flipped={p.flipped}
+            title={p.title}
+            body={p.body}
+            button={p.button}
+          />
+        ))
+      }
     </>
   )
 }

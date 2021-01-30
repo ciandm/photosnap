@@ -2,15 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types';
 
 const ResponsiveImage = ({
-  image,
+  images,
   alt,
   classes
 }) => {
   return (
     <img
       className={classes}
-      src={image.mobile}
-      srcSet={`${image.mobile} 300w`, `${image.tablet} 768w`, `${image.desktop} 1032w`}
+      src={images.mobile}
+      srcSet={`${images.mobile} 300w, ${images.tablet} 768w, ${images.desktop} 1032w`}
       alt={alt}
     />
   )
@@ -19,7 +19,15 @@ const ResponsiveImage = ({
 export default ResponsiveImage
 
 ResponsiveImage.propTypes = {
-  image: PropTypes.object.isRequired,
+  images: PropTypes.object.isRequired,
   alt: PropTypes.string.isRequired,
   classes: PropTypes.string,
+}
+
+ResponsiveImage.defaultProps = {
+  images: {
+    desktop: require('../../../assets/home/desktop/beautiful-stories.jpg').default,
+    tablet: require('../../../assets/home/tablet/beautiful-stories.jpg').default,
+    mobile: require('../../../assets/home/mobile/beautiful-stories.jpg').default,
+  }
 }
