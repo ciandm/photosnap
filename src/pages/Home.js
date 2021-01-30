@@ -3,15 +3,21 @@ import React from 'react'
 import Nav from '../components/shared/Nav/Nav';
 import HeroImage from '../components/shared/HeroImage/HeroImage';
 import PhotosnapProposition from '../components/home/PhotosnapProposition/PhotosnapProposition';
+import ReadStoryCard from '../components/shared/ReadStories/ReadStoryCard/ReadStoryCard';
+import ReadStories from '../components/shared/ReadStories/ReadStories';
+import Icons from '../components/shared/Icons/Icons';
 
 // DATA
 import homeData from './pageData/homeData';
+import IconColumn from '../components/shared/Icons/IconColumn/IconColumn';
 
 function Home() {
 
   const {
     hero,
-    propositions
+    propositions,
+    stories,
+    icons
   } = homeData
   return (
     <>
@@ -32,6 +38,23 @@ function Home() {
           />
         ))
       }
+      <ReadStories>
+        {
+          stories.map(story => (
+            <ReadStoryCard
+              key={story.id}
+              {...story} />
+          ))
+        }
+      </ReadStories>
+      <Icons>
+        {icons.map(icon => (
+          <IconColumn
+            key={icon.id}
+            {...icon}
+          />
+        ))}
+      </Icons>
     </>
   )
 }

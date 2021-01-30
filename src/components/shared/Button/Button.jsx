@@ -16,7 +16,8 @@ const Button = ({
         'button--black': variation === 'black',
         'button--white': variation === 'white',
         'button--alt-black': variation === 'alt-black',
-        'button--alt-white': variation === 'alt-white'
+        'button--alt-white': variation === 'alt-white',
+        'button--alt-long': variation === 'alt-long'
       })}>
       {
         link ? (
@@ -36,7 +37,7 @@ const Button = ({
 export default Button
 
 Button.propTypes = {
-  variation: PropTypes.oneOf(['black', 'white', 'alt-black', 'alt-white']).isRequired,
+  variation: PropTypes.oneOf(['black', 'white', 'alt-black', 'alt-white', 'alt-long']).isRequired,
   children: PropTypes.node.isRequired,
   link: PropTypes.string,
 }

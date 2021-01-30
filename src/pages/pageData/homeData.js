@@ -1,3 +1,5 @@
+import ROUTES from '../routes';
+
 const homeData = {
   hero: {
     alternate: false,
@@ -11,7 +13,7 @@ const homeData = {
     button: {
       variation: "alt-white",
       text: "Get an invite",
-      link: "/"
+      link: ROUTES.STORIES
     }
   },
   propositions: [
@@ -29,7 +31,7 @@ const homeData = {
       button: {
         variation: "alt-black",
         text: "View the stories",
-        link: '/stories'
+        link: ROUTES.STORIES
       }
     },
     {
@@ -46,8 +48,101 @@ const homeData = {
       button: {
         variation: "alt-black",
         text: "View the stories",
-        link: '/stories'
+        link: ROUTES.STORIES
       }
+    }
+  ],
+  stories: [
+    {
+      id: 1,
+      images: {
+        mobile: require("../../assets/stories/mobile/mountains.jpg").default,
+        desktop: require("../../assets/stories/desktop/mountains.jpg").default,
+        info: {
+          alt: "Beautiful shot of mountains"
+        }
+      },
+      title: "The Mountains",
+      credit: "John Appleseed",
+      button: {
+        text: "Read story",
+        link: ROUTES.STORIES,
+        variation: "alt-long"
+      }
+    },
+    {
+      id: 2,
+      images: {
+        mobile: require("../../assets/stories/mobile/cityscapes.jpg").default,
+        desktop: require("../../assets/stories/desktop/cityscapes.jpg").default,
+        info: {
+          alt: "High viewpoint of sunset over a city"
+        }
+      },
+      title: "Sunset Cityscapes",
+      credit: "Benjamin Cruz",
+      button: {
+        text: "Read story",
+        link: ROUTES.STORIES,
+        variation: "alt-long"
+      }
+    },
+    {
+      id: 3,
+      images: {
+        mobile: require("../../assets/stories/mobile/18-days-voyage.jpg").default,
+        desktop: require("../../assets/stories/desktop/18-days-voyage.jpg").default,
+        info: {
+          alt: "Silhouette of person walking with sunset in background"
+        }
+      },
+      title: "18 Days Voyage",
+      credit: "Alexei Borodin",
+      button: {
+        text: "Read story",
+        link: ROUTES.STORIES,
+        variation: "alt-long"
+      }
+    },
+    {
+      id: 4,
+      images: {
+        mobile: require("../../assets/stories/mobile/architecturals.jpg").default,
+        desktop: require("../../assets/stories/desktop/architecturals.jpg").default,
+        info: {
+          alt: "Amazing architectural design on a building"
+        }
+      },
+      title: "Architecturals",
+      credit: "Samantha Brooke",
+      button: {
+        text: "Read story",
+        link: ROUTES.STORIES,
+        variation: "alt-long"
+      }
+    },
+  ],
+  icons: [
+    {
+      id: 1,
+      icon: require('../../assets/features/desktop/responsive.svg').default,
+      alt: "Responsive icon",
+      title: "100% Responsive",
+      body: "No matter which the device you’re on, our site is fully responsive and stories look beautiful on any screen."
+    },
+    {
+      id: 2,
+      icon: require('../../assets/features/desktop/no-limit.svg').default,
+      alt: "Infinity icon",
+      title: "No Photo Upload Limit",
+      body: "Our tool has no limits on uploads or bandwidth. Freely upload in bulk and share all of your stories in one go."
+    },
+    {
+      id: 3,
+      icon: require('../../assets/features/desktop/embed.svg').default,
+      alt: "Embed icon",
+      title: "Available to Embed",
+      body: "Embed Tweets, Facebook posts, Instagram media, Vimeo or YouTube videos, Google Maps, and more."
     }
   ]
 }

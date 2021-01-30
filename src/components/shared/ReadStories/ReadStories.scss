@@ -1,0 +1,15 @@
+@import '../../../theme/variables';
+
+.stories {
+  display: grid;
+  grid-auto-rows: min-content;
+  grid-template-columns: 1fr;
+
+  @include for-phone-up {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include for-laptop-up {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

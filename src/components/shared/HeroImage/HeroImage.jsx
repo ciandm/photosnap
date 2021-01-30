@@ -4,7 +4,6 @@ import './HeroImage.scss';
 // COMPONENTS 
 import Button from '../Button/Button';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
-// IMAGES
 
 function HeroImage({
   alternate,
@@ -16,6 +15,7 @@ function HeroImage({
   button
 }) {
   return (
+    // alternate has full width background image
     <section className={alternate ? 'hero hero--alternate' : 'hero'}>
       <div className="hero__image-container">
         <ResponsiveImage

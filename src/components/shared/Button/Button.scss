@@ -34,7 +34,8 @@
   }
 
   &--alt-black,
-  &--alt-white {
+  &--alt-white,
+  &--alt-long {
     align-items: center;
     display: flex;
     padding-left: 0;
@@ -55,11 +56,18 @@
     }
   }
 
+  &--alt-long {
+    justify-content: space-between;
+    padding: 0;
+    width: 100%;
+  }
+
   &--alt-black {
     color: $pureBlack;
   }
 
-  &--alt-white {
+  &--alt-white,
+  &--alt-long {
     color: $pureWhite;
 
     // change svg background image to white

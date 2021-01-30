@@ -3,6 +3,7 @@
 .hero {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 
   @include for-phone-up {
     align-items: stretch;

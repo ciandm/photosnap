@@ -2,6 +2,8 @@ import React from 'react'
 // COMPONENTS
 import Nav from '../components/shared/Nav/Nav';
 import HeroImage from '../components/shared/HeroImage/HeroImage';
+import Icons from '../components/shared/Icons/Icons';
+import IconColumn from '../components/shared/Icons/IconColumn/IconColumn';
 
 // DATA
 import featuresData from './pageData/featuresData';
@@ -9,7 +11,8 @@ import featuresData from './pageData/featuresData';
 function Features() {
 
   const {
-    hero
+    hero,
+    icons
   } = featuresData
   return (
     <>
@@ -17,6 +20,14 @@ function Features() {
       <HeroImage
         {...hero}
       />
+      <Icons multi={true}>
+        {icons.map(icon => (
+          <IconColumn
+            key={icon.id}
+            {...icon}
+          />
+        ))}
+      </Icons>
     </>
   )
 }
