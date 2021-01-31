@@ -72,6 +72,7 @@
       margin-left: 1.2rem;
     }
 
+    // the url for these is set on the ID of the svg file
     &--facebook:hover svg path {
      fill: url('#facebook');
     }

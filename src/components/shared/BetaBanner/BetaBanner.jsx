@@ -10,7 +10,7 @@ function BetaBanner() {
         <h3 className="beta__title">We're in beta. Get your invite today!</h3>
         <Button
           variation="alt-white"
-          link={useLocation()}
+          link={useLocation().pathname}
         >
           Get an invite
         </Button>
