@@ -8,6 +8,7 @@ import ROUTES from './pages/routes';
 import Home from './pages/Home';
 import Stories from './pages/Stories';
 import Features from './pages/Features';
+import Pricing from './pages/Pricing';
 import ScrollToTop from './utils/ScrollToTop';
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
         </Route>
         <Route path={ROUTES.FEATURES}>
           <Features />
+        </Route>
+        <Route path={ROUTES.PRICING}>
+          <Pricing />
         </Route>
         <Route exact path={ROUTES.HOME}>
           <Home />

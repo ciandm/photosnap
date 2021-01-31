@@ -109,6 +109,32 @@
     & a {
       color: inherit;
       text-decoration: none;
+
+      @include for-hover {
+        padding: 1rem 0;
+        position: relative;
+
+        &.active::after,
+        &::after {
+          background: $mainAccent;
+          content: '';
+          display: block;
+          height: 1px;
+          position: absolute;
+          top: 100%;
+          transform: scaleX(0);
+          transition: transform 0.25s ease-in-out;
+          width: 100%;
+        }
+
+        &.active::after {
+          transform: scaleX(1)
+        }
+
+        &:hover::after {
+            transform: scaleX(1);
+          }
+      }
     }
 
     & + & {

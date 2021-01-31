@@ -5,6 +5,9 @@ const featuresData = {
       mobile: require("../../assets/features/mobile/hero.jpg").default,
       tablet: require("../../assets/features/tablet/hero.jpg").default,
       desktop: require("../../assets/features/desktop/hero.jpg").default,
+      info: {
+        alt: "Photographer with a camera ready to shoot a picture"
+      }
     },
     title: "Features",
     intro: "We make sure all of our features are designed to be loved by every aspiring and even professional photograpers who wanted to share their stories.",

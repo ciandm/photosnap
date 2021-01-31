@@ -23,7 +23,7 @@ function Stories() {
       <ReadStories>
         {stories.map(story => (
           <ReadStoryCard
-            id={story.id}
+            key={story.id}
             {...story}
           />
         ))}

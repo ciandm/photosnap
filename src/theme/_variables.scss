@@ -21,6 +21,10 @@ $pureWhite: hsl(0, 0%, 100%);
   @media screen and (min-width: 1032px) { @content; }
 }
 
+@mixin for-hover {
+  @media (hover: hover) and (pointer: fine) { @content }
+}
+
 // typography
 @mixin largeHeading {
   font-size: 3.2rem;

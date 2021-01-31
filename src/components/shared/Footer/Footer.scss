@@ -18,6 +18,10 @@
     }
   }
 
+  @include for-laptop-up {
+    padding: 6.4rem 0;
+  }
+
   &__details {
     display: grid;
 

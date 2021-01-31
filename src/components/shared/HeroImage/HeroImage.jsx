@@ -21,7 +21,7 @@ function HeroImage({
         <ResponsiveImage
           classes="hero__image"
           images={images}
-          alt="Man with a camera looking over a beautiful lake"
+          alt={images.info.alt}
         />
       </div>
       <div className="hero__content">
@@ -67,6 +67,7 @@ HeroImage.propTypes = {
     desktop: PropTypes.string,
     tablet: PropTypes.string,
     mobile: PropTypes.string,
+    info: PropTypes.object,
   }),
   featured: PropTypes.string,
   title: PropTypes.string.isRequired,
@@ -80,4 +81,9 @@ HeroImage.propTypes = {
     text: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
   }),
+}
+
+HeroImage.defaultProps = {
+  title: "This is a title",
+  intro: "God creates dinosaurs. God destroys dinosaurs. God creates Man. Man destroys God. Man creates Dinosaurs. You know what? It is beets. I've crashed into a beet truck.",
 }

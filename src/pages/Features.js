@@ -3,6 +3,7 @@ import React from 'react'
 import HeroImage from '../components/shared/HeroImage/HeroImage';
 import Icons from '../components/shared/Icons/Icons';
 import IconColumn from '../components/shared/Icons/IconColumn/IconColumn';
+import BetaBanner from '../components/shared/BetaBanner/BetaBanner';
 
 // DATA
 import featuresData from './pageData/featuresData';
@@ -27,6 +28,7 @@ function Features() {
           />
         ))}
       </Icons>
+      <BetaBanner />
     </PageTemplate>
   )
 }

@@ -7,9 +7,11 @@
   width: 100%;
   z-index: 50;
 
-  &:hover {
-    transform: translateY(-2.4rem);
-    z-index: 100;
+  @include for-hover {
+    &:hover {
+      transform: translateY(-2.4rem);
+      z-index: 100;
+    }
   }
 
   &__image-container {

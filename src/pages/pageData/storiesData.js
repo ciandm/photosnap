@@ -7,6 +7,9 @@ const storiesData = {
       mobile: require("../../assets/stories/mobile/moon-of-appalacia.jpg").default,
       tablet: require("../../assets/stories/tablet/moon-of-appalacia.jpg").default,
       desktop: require("../../assets/stories/desktop/moon-of-appalacia.jpg").default,
+      info: {
+        alt: "Hazy full moon of Appalachia"
+      }
     },
     featured: "Last month's featured story",
     title: "Hazy full moon of Appalachia",

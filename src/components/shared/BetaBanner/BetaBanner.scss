@@ -1,0 +1,80 @@
+@import '../../../theme/variables';
+
+.beta {
+  background-image: url('../../../assets/shared/mobile/bg-beta.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 6.4rem 3.2rem;
+  position: relative;
+  z-index: 50;
+
+    @include for-phone-up {
+      background-image: url('../../../assets/shared/tablet/bg-beta.jpg');
+      padding: 6.8rem 4rem;
+    }
+
+    @include for-laptop-up {
+      padding: 6.8rem 0;
+    }
+
+  &::after,
+  &__content::before {
+    content: '';
+    display: block;
+    position: absolute;
+  }
+
+  &::after {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &__content {
+    color: $pureWhite;
+    position: relative;
+    z-index: 2;
+
+    @include for-phone-up {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      position: initial;
+      z-index: initial;
+    }
+
+    @include for-laptop-up {
+      margin: 0 auto;
+      max-width: 111rem;
+    }
+
+    &::before {
+      background: $mainAccent;
+      height: 6px;
+      top: -6.4rem;
+      width: 128px;
+
+      @include for-phone-up {
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        top: unset;
+        width: 6px;
+      }
+    }
+  }
+
+  &__title {
+    @include largeHeading;
+    margin-bottom: 2.4rem;
+
+     @include for-phone-up {
+      max-width: 40rem;
+    }
+  }
+}
