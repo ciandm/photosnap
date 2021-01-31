@@ -4,6 +4,7 @@ import './ReadStoryCard.scss';
 // COMPONENTS
 import ResponsiveImage from '../../ResponsiveImage/ResponsiveImage';
 import Button from '../../Button/Button';
+import { Link } from 'react-router-dom';
 
 function ReadStoryCard({
   images,
@@ -14,28 +15,29 @@ function ReadStoryCard({
 }) {
   return (
     <div className="story">
-      <div className="story__image-container">
-        <ResponsiveImage
-          classes="story__image"
-          images={images}
-          alt={images.info.alt}
-        />
-      </div>
-      <div className="story__details">
-        {
-          date &&
-          <span className="story__date">{date}</span>
-        }
-        <div className="story__description">
-          <h5 className="story__title">{title}</h5>
-          <p className="story__credit">by {credit}</p>
+      <Link to={button.link}>
+        <div className="story__image-container">
+          <ResponsiveImage
+            classes="story__image"
+            images={images}
+            alt={images.info.alt}
+          />
         </div>
-        <Button
-          variation={button.variation}
-          link={button.link}
-        >{button.text}
-        </Button>
-      </div>
+        <div className="story__details">
+          {
+            date &&
+            <span className="story__date">{date}</span>
+          }
+          <div className="story__description">
+            <h5 className="story__title">{title}</h5>
+            <p className="story__credit">by {credit}</p>
+          </div>
+          <Button
+            variation={button.variation}
+          >{button.text}
+          </Button>
+        </div>
+      </Link>
     </div>
   )
 }

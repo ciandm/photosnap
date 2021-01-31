@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import useWindowSize from '../../../utils/useWindowSize';
 // STYLES
 import './Nav.scss';
@@ -27,16 +27,23 @@ function Nav() {
             <li className="nav__item">
               <NavLink
                 to={ROUTES.STORIES}
-              >Stories</NavLink></li>
-            <li className="nav__item"><NavLink
-              to={ROUTES.FEATURES}
-            >Features</NavLink></li>
-            <li className="nav__item"><NavLink
-              to={ROUTES.PRICING}
-            >Pricing</NavLink></li>
+              >Stories</NavLink>
+            </li>
+            <li className="nav__item">
+              <NavLink
+                to={ROUTES.FEATURES}
+              >Features</NavLink>
+            </li>
+            <li className="nav__item">
+              <NavLink
+                to={ROUTES.PRICING}
+              >Pricing</NavLink>
+            </li>
           </ul>
           <Button
-            variation="black">
+            variation="black"
+            link={useLocation().pathname}
+          >
             Get an invite
             </Button>
         </div>

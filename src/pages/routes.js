@@ -1,4 +1,4 @@
-export const ROUTES = {
+const ROUTES = {
   HOME: '/',
   STORIES: '/stories',
   FEATURES: '/features',

@@ -21,7 +21,7 @@ const storiesData = {
     button: {
       variation: "alt-white",
       text: "Read the story",
-      link: "/"
+      link: "/stories"
     }
   },
   stories: [

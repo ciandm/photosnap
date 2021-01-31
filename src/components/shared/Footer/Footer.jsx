@@ -11,7 +11,7 @@ import { ReactComponent as Pinterest } from '../../../assets/shared/desktop/pint
 import { ReactComponent as Instagram } from '../../../assets/shared/desktop/instagram.svg';
 //COMPONENTS
 import Button from '../Button/Button';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import ROUTES from '../../../pages/routes';
 
 const Footer = () => {
@@ -67,6 +67,7 @@ const Footer = () => {
         <div className="footer__extra">
           <Button
             variation="alt-white"
+            link={useLocation().pathname}
           >Get an invite</Button>
           <p className="footer__copyright">
             Copyright 2019. All Rights Reserved

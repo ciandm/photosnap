@@ -7,30 +7,41 @@ import { Link } from 'react-router-dom'
 const Button = ({
   variation,
   link,
-  children
+  children,
 }) => {
 
   return (
-    <button
-      className={cn('button', {
-        'button--black': variation === 'black',
-        'button--white': variation === 'white',
-        'button--alt-black': variation === 'alt-black',
-        'button--alt-white': variation === 'alt-white',
-        'button--alt-long': variation === 'alt-long'
-      })}>
+    <>
       {
         link ? (
           <Link
             to={link}
+            role="button"
+            className={cn('button', {
+              'button--black': variation === 'black',
+              'button--white': variation === 'white',
+              'button--alt-black': variation === 'alt-black',
+              'button--alt-white': variation === 'alt-white',
+              'button--alt-long': variation === 'alt-long'
+            })}
           >
             {children}
           </Link>
         ) : (
-            children
+            <button
+              className={cn('button', {
+                'button--black': variation === 'black',
+                'button--white': variation === 'white',
+                'button--alt-black': variation === 'alt-black',
+                'button--alt-white': variation === 'alt-white',
+                'button--alt-long': variation === 'alt-long'
+              })}
+            >
+              {children}
+            </button>
           )
       }
-    </button>
+    </>
   )
 }
 
@@ -43,6 +54,5 @@ Button.propTypes = {
 }
 
 Button.defaultProps = {
-  variation: 'black',
-  linkto: '/'
+  variation: 'black'
 }

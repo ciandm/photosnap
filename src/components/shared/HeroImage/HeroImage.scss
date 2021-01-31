@@ -119,8 +119,12 @@
     color: $pureWhite;
     opacity: .6;
 
-    & + button {
+    & + a {
       margin-top: 1.2rem;
+
+      @include for-small-tablet-up {
+        margin-top: 2.4rem;
+      }
     }
   }
 

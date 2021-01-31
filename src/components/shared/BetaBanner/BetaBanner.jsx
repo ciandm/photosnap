@@ -1,6 +1,7 @@
 import React from 'react'
 import './BetaBanner.scss';
 import Button from '../Button/Button';
+import { useLocation } from 'react-router-dom'
 
 function BetaBanner() {
   return (
@@ -9,7 +10,7 @@ function BetaBanner() {
         <h3 className="beta__title">We're in beta. Get your invite today!</h3>
         <Button
           variation="alt-white"
-          link="/"
+          link={useLocation()}
         >
           Get an invite
         </Button>

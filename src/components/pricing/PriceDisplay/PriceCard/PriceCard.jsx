@@ -2,6 +2,7 @@ import React from 'react'
 import './PriceCard.scss';
 // COMPONENTS
 import Button from '../../../shared/Button/Button';
+import ROUTES from '../../../../pages/routes';
 
 function PriceCard({
   featured,
@@ -30,7 +31,7 @@ function PriceCard({
       </div>
       <Button
         variation={featured ? 'white' : 'black'}
-        link="/"
+        link={ROUTES.PRICING}
       >
         Pick plan
       </Button>
