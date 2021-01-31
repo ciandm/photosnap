@@ -1,0 +1,106 @@
+@import '../../../../theme/variables';
+
+.p-card {
+  background-color: hsl(0, 0%, 96%);
+  display: flex;
+  flex-direction: column;
+  padding: 4.8rem 2.2rem;
+
+  @include for-phone-up {
+    display: grid;
+    gap: 0 1.2rem;
+    grid-template-columns: minmax(auto, 27rem) 1fr;
+    padding: 4rem;
+  }
+
+  @include for-laptop-up {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--featured {
+    background-color: $pureBlack;
+    position: relative;
+
+    &::before {
+      background: $mainAccent;
+      content: '';
+      display: block;
+      height: 6px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+
+      @include for-phone-up {
+        height: 100%;
+        width: 6px;
+      }
+
+      @include for-laptop-up {
+        height: 6px;
+        width: 100%;
+      }
+    }
+
+    @include for-laptop-up {
+      padding-bottom: 7rem;
+      padding-top: 8.8rem;
+    }
+  }
+
+  &__plan {
+    @include mediumHeading;
+    margin-bottom: 1.8rem;
+  }
+
+  &__detail,
+  &__billing {
+    @include body;
+    opacity: .6;
+  }
+
+  &__pricing,
+  &__details {
+    color: $pureBlack;
+    padding-bottom: 4rem;
+    text-align: center;
+
+    @include for-phone-up {
+      text-align: left;
+    }
+
+    @include for-laptop-up {
+      text-align: center;
+    }
+  }
+
+  &__details {
+    @include for-phone-up {
+      padding-bottom: 3.2rem;
+    } 
+  }
+
+  &__billing,
+  &__price {
+    @include for-phone-up {
+      text-align: right;
+    }
+
+    @include for-laptop-up {
+      text-align: center;
+    }
+  }
+
+  &--featured &__pricing,
+  &--featured &__details {
+    color: $pureWhite;
+  }
+
+  &__price {
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: 4.16667px;
+    line-height: 4.8rem;
+  }
+}
